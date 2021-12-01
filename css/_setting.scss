@@ -1,0 +1,55 @@
+$white: #ffffff;
+$black: #0a0a0a;
+$light_gray: #f2f2f2;
+$gray: #707070;
+$light_brown: #a38787;
+$brown: #6f6565;
+$sp: 767px;
+
+@mixin absPosition($top: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin img_cover {
+  width: 100%;
+  object-fit: cover;
+}
+
+@mixin between_center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin center_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font_sw($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin wi_hi($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin background(
+  $path: null,
+  $pos: center center,
+  $size: cover,
+  $repeat: no-repeat
+) {
+  background: url($path) $pos / $size $repeat;
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
